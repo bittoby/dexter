@@ -14,6 +14,7 @@ Dexter takes complex financial questions and turns them into clear, step-by-step
 - **Autonomous Execution**: Selects and executes the right tools to gather financial data
 - **Self-Validation**: Checks its own work and iterates until tasks are complete
 - **Real-Time Financial Data**: Access to income statements, balance sheets, and cash flow statements
+- **Interactive Charting**: Generates beautiful HTML charts that automatically open in your browser
 - **Safety Features**: Built-in loop detection and step limits to prevent runaway execution
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/virattt?style=social)](https://twitter.com/virattt)
@@ -99,12 +100,35 @@ Try asking Dexter questions like:
 - "Compare Microsoft and Google's operating margins for 2023"
 - "Analyze Tesla's cash flow trends over the past year"
 - "What is Amazon's debt-to-equity ratio based on recent financials?"
+- "Show me a bar chart of Nvidia's income in recent years"
+- "Create a line chart of Apple's stock price over the last 6 months"
 
 Dexter will automatically:
 1. Break down your question into research tasks
 2. Fetch the necessary financial data
 3. Perform calculations and analysis
 4. Provide a comprehensive, data-rich answer
+5. Generate interactive charts when requested (opens automatically in browser)
+
+### Charting
+
+Dexter supports interactive HTML charts that open automatically in your browser. Simply ask for visualizations:
+
+**Supported Chart Types:**
+- **Line**: Trends over time (e.g., "Show me a line chart of revenue")
+- **Bar**: Comparisons (e.g., "Bar chart comparing quarterly earnings")
+- **Area**: Cumulative data visualization
+- **Scatter**: Correlation analysis
+- **Pie/Doughnut**: Proportional breakdowns
+- **Radar**: Multi-metric comparisons
+- **Candlestick**: OHLC price data for stocks
+
+**Examples:**
+- "Provide me a bar chart for Nvidia's income in recent years"
+- "Show me a candlestick chart of Tesla's stock price"
+- "Create a pie chart of revenue by segment in Apple"
+
+Charts are saved to `.dexter/charts/` and automatically open in your default browser.
 
 ## Architecture
 

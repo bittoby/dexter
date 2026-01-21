@@ -4,6 +4,7 @@ import { callLlm, getFastModel } from '../model/llm.js';
 import { ContextManager } from './context.js';
 import { Scratchpad } from './scratchpad.js';
 import { createFinancialSearch, tavilySearch } from '../tools/index.js';
+import { generateChart } from '../tools/finance/chart.js';
 import { buildSystemPrompt, buildIterationPrompt, buildFinalAnswerPrompt, buildToolSummaryPrompt } from '../agent/prompts.js';
 import { extractTextContent, hasToolCalls } from '../utils/ai-message.js';
 import { streamLlmResponse } from '../utils/llm-stream.js';
@@ -75,6 +76,7 @@ export class Agent {
     const model = config.model ?? 'gpt-5.2';
     const tools: StructuredToolInterface[] = [
       createFinancialSearch(model),
+      generateChart,
       ...(process.env.TAVILY_API_KEY ? [tavilySearch] : []),
     ];
     const systemPrompt = buildSystemPrompt();
